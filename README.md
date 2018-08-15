@@ -13,9 +13,11 @@ Anleitung Postgres and Postgis
 `curl -o readline-6.2-10.el7.x86_64.rpm http://mirror.centos.org/centos/7/os/x86_64/Packages/readline-6.2-10.el7.x86_64.rpm`
 
 `rpm2cpio readline-devel-6.2-10.el7.x86_64.rpm > readline-devel.cpio`
+
 `rpm2cpio readline-6.2-10.el7.x86_64.rpm > readline.cpio`
 
 `cpio -idv < readline-devel.cpio`
+
 `cpio -idv < readline.cpio`
 
 `cd postgres`
@@ -36,9 +38,13 @@ psql -p <PORTNUMMER>
 //Im SSH Client kann ein Tunnel gesetzt werden
 
 `curl -o geos-3.6.3.tar.bz2 http://download.osgeo.org/geos/geos-3.6.3.tar.bz2`
+
 `tar -jxvf geos-3.6.3.tar.bz2`
+
 `cd geos-3.6.3`
+
 `./configure --prefix=$HOME/geos`
+
 `make install`
 
 
