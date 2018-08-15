@@ -62,7 +62,9 @@ Get proj4
 
 `make install`
 
+
 Get Postgis
+
 `curl -o postgis-2.4.4.tar.gz http://download.osgeo.org/postgis/source/postgis-2.4.4.tar.gz`
 
 `tar -zxvf postgis-2.4.4.tar.gz`
@@ -71,7 +73,9 @@ Get Postgis
 
 `./configure --with-geosconfig=$HOME/geos/bin/geos-config --with-projdir=$HOME/proj/`
 
+
 Get gdal
+
 `curl -o gdal-2.3.1.tar.gz http://download.osgeo.org/gdal/CURRENT/gdal-2.3.1.tar.gz`
 
 `tar -zxvf gdal-2.3.1.tar.gz`
