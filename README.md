@@ -38,7 +38,9 @@ psql -p <PORTNUMMER>
 //Im SSH Client kann ein Tunnel gesetzt werden
 
 
+
 Get geos
+
 `curl -o geos-3.6.3.tar.bz2 http://download.osgeo.org/geos/geos-3.6.3.tar.bz2`
 
 `tar -jxvf geos-3.6.3.tar.bz2`
