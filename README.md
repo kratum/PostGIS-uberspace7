@@ -3,9 +3,9 @@ This is a step-by-step guid to install postgresql + postgis on CentOS 7 without 
 
 Anleitung Postgres and Postgis
 
-cd bin
+`cd bin`
 
-code: git clone https://github.com/postgres/postgres
+`git clone https://github.com/postgres/postgres`
 
 // Get readline: https://unix.stackexchange.com/questions/61283/yum-install-in-user-home-for-non-admins
 curl -o readline-devel-6.2-10.el7.x86_64.rpm http://mirror.centos.org/centos/7/os/x86_64/Packages/readline-devel-6.2-10.el7.x86_64.rpm
