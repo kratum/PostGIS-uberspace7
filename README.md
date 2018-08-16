@@ -1,4 +1,6 @@
+
 # PostGIS-uberspace7
+
 This is a step-by-step guid to install postgresql + postgis on CentOS 7 without root access
 
 Anleitung Postgres and Postgis
@@ -20,17 +22,38 @@ Anleitung Postgres and Postgis
 
 ## Get Postgres
 
-`cd bin`
+`curl -o postgresql-9.6.10.tar.gz https://ftp.postgresql.org/pub/source/v9.6.10/postgresql-9.6.10.tar.gz`
 
-`git clone https://github.com/postgres/postgres`
+`tar -zxvf postgresql-9.6.10.tar.gz`
 
-`cd postgres`
+`cd postgresql-9.6.10`
 
-`./configure --prefix=$HOME/postgresql --with-includes=$HOME/bin/usr/include --with-libraries=$HOME/bin/usr/lib64`
+`./configure --prefix=$HOME --with-includes=$HOME/usr/include --with-libraries=$HOME/usr/lib64`
 
 `make`
 
 `make install`
+
+
+### Edit postgresql config
+
+`nano $HOME/share/postgresql/postgresql.conf.sample`
+
+Uncomment PORT and set one
+
+### Set Datadir and add bin to path
+
+`export PGDATA=$HOME/pgdata`
+
+`export PATH=$HOME/bin:$PATH`
+
+### Add pathes to bash profile 
+
+`nano ~/.bashrc`
+
+Add `export PGDATA=$HOME/pgdata`
+
+Add `export PATH=$HOME/bin:$PATH`
 
 
 ## Get geos
@@ -41,7 +64,7 @@ Anleitung Postgres and Postgis
 
 `cd geos-3.6.3`
 
-`./configure --prefix=$HOME/geos`
+`./configure --prefix=$HOME`
 
 `make install`
 
@@ -60,16 +83,6 @@ Anleitung Postgres and Postgis
 `make install`
 
 
-## Get Postgis
-
-`curl -o postgis-2.4.4.tar.gz http://download.osgeo.org/postgis/source/postgis-2.4.4.tar.gz`
-
-`tar -zxvf postgis-2.4.4.tar.gz`
-
-`cd postgis-2.4.4`
-
-`./configure --with-geosconfig=$HOME/geos/bin/geos-config --with-projdir=$HOME/proj/`
-
 
 ## Get gdal
 
@@ -79,11 +92,32 @@ Anleitung Postgres and Postgis
 
 `cd gdal-2.3.1`
 
-`./configure`
+`./configure --prefix=$HOME`
+
+`make`
+
+`make install`
+
+
+
+## Get Postgis
+
+`curl -o postgis-2.4.4.tar.gz http://download.osgeo.org/postgis/source/postgis-2.4.4.tar.gz`
+
+`tar -zxvf postgis-2.4.4.tar.gz`
+
+`cd postgis-2.4.4`
+
+`./configure --prefix=$HOME --with-geosconfig=$HOME/bin/geos-config --with-projdir=$HOME/ --with-pgconfig=$HOME/bin/pg_config --with-gdalconfig=$HOME/bin/gdal-config`
+
+`make && make install DESTDIR=$HOME/postgis REGRESS=1`
+
 
 
 ## Setup
-`nano $HOME/postgresql/share/postgresql.conf`
+
+`nano $HOME/share/postgresql/postgresql.conf`
+
 Hier wird der Port geändert
 
 pg_ctl start | stop | status
