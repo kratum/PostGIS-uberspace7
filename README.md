@@ -36,8 +36,9 @@ Anleitung Postgres and Postgis
 
 
 ### Edit postgresql config
+`cp $HOME/share/postgresql/postgresql.conf.sample $HOME/share/postgresql/postgresql.conf`
 
-`nano $HOME/share/postgresql/postgresql.conf.sample`
+`nano $HOME/share/postgresql/postgresql.conf`
 
 Uncomment PORT and set one
 
