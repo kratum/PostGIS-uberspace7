@@ -121,6 +121,8 @@ Add `export PATH=$HOME/bin:$PATH`
 
 Hier wird der Port geändert
 
+initdb -D $PGDATA
+
 pg_ctl start | stop | status
 
 psql -p <PORTNUMMER>
