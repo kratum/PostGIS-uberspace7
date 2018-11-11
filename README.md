@@ -109,7 +109,7 @@ Add `export PATH=$HOME/bin:$PATH`
 
 `cd postgis-2.4.4`
 
-`./configure --prefix=$HOME --with-geosconfig=$HOME/bin/geos-config --with-projdir=$HOME/ --with-pgconfig=$HOME/bin/pg_config --with-gdalconfig=$HOME/bin/gdal-config`
+`./configure --prefix=$HOME --with-geosconfig=$HOME/bin/geos-config --with-projdir=$HOME/proj --with-pgconfig=$HOME/bin/pg_config --with-gdalconfig=$HOME/bin/gdal-config`
 
 `make && make install DESTDIR=$HOME/postgis REGRESS=1`
 
