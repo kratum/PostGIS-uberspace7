@@ -87,11 +87,11 @@ Add `export PATH=$HOME/bin:$PATH`
 
 ## Get gdal
 
-`curl -o gdal-2.3.1.tar.gz http://download.osgeo.org/gdal/CURRENT/gdal-2.3.1.tar.gz`
+`curl -o gdal-2.3.2.tar.gz http://download.osgeo.org/gdal/CURRENT/gdal-2.3.2.tar.gz`
 
-`tar -zxvf gdal-2.3.1.tar.gz`
+`tar -zxvf gdal-2.3.2.tar.gz`
 
-`cd gdal-2.3.1`
+`cd gdal-2.3.2`
 
 `./configure --prefix=$HOME`
 
